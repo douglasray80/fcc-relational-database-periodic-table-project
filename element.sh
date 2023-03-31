@@ -18,7 +18,7 @@ then
   # if argument is two letters starting with an uppercase and ending with a lowercase 
   ELEMENT_RESULT=$($PSQL "SELECT * FROM elements FULL JOIN properties USING(atomic_number) WHERE symbol = '$1'")
 else
-  echo "Invalid argument"
+  ELEMENT_RESULT=$($PSQL "SELECT * FROM elements FULL JOIN properties USING(atomic_number) WHERE name = '$1'")
 fi
 
 if [[ -z $ELEMENT_RESULT ]]
