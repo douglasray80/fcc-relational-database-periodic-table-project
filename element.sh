@@ -8,6 +8,7 @@ if [[ -z $1 ]]
 then
   # print message and exit if no arguments provided.
   echo "Please provide an element as an argument."
+  exit
 elif [[ $1 =~ ^[1-9]$|^10$ ]]
 then
   # if argument is a number between 1 - 10
